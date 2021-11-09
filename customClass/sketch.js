@@ -38,7 +38,7 @@ function mousePressed(){
 
 function draw() {
   image(video, 0, 0, width, height);
-    filter(THRESHOLD,1); 
+  //filter(THRESHOLD,1); 
   strokeWeight(2);
 
   // For one pose only (use a for loop for multiple poses!)
@@ -46,36 +46,17 @@ function draw() {
     const pose = poses[0].pose;
       console.log(pose);
 
-    // Create a pink ellipse for the nose
-    fill(213, 0, 143);
+    fill(255, 0, 0);
     const nose = pose.nose;
     ellipse(nose.x, nose.y, 20, 20);
 
-    // Create a yellow ellipse for the right eye
-    fill(255, 215, 0);
+    fill(255, 255, 255);
     const rightEye = pose.rightEye;
-    ellipse(rightEye.x, rightEye.y, 20, 20);
+    ellipse(rightEye.x, rightEye.y, 40, 40);
 
-    // Create a yellow ellipse for the right eye
-    fill(255, 215, 0);
+    fill(255, 255, 255);
     const leftEye = pose.leftEye;
-    ellipse(leftEye.x, leftEye.y, 20, 20);
+    ellipse(leftEye.x, leftEye.y, 40, 40);
       
-      fill(215, 255, 255);
-    const rightEar = pose.rightEar;
-    ellipse(rightEar.x, rightEar.y, 20, 20);
-
-    // Create a yellow ellipse for the right eye
-    fill(215, 255, 255);
-    const leftEar = pose.leftEar;
-    ellipse(leftEar.x, leftEar.y, 20, 20);
-      
-    fill(0,255,0);
-      const rightShoulder = pose.rightShoulder;
-    ellipse(rightShoulder.x, rightShoulder.y, 20, 20 );
-      
-      fill(0,255,0);
-      const leftShoulder = pose.leftShoulder;
-    ellipse(leftShoulder.x, leftShoulder.y, 20, 20 );
   }
 }
